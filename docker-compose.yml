@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+  openstack_mock:
+    build:
+      context: ./mock
+      cache_from:
+        - openstackmock:latest
+    ports:
+      - "8774:8774"
+    image: openstackmock:latest
+  integration_test_suite:
+    depends_on:
+      - openstack_mock
+    build:
+      context: .
+      cache_from:
+        - openstackconnectorintegrationtest:latest
+    restart: "no"
+    environment:
+      - OPENSTACK_URL=http://openstack_mock:8774
+      - OPENSTACK_USER=test-user
+      - OPENSTACK_PASSWORD=12345
+    image: openstackconnectorintegrationtest:latest
+

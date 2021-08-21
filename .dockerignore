@@ -1,0 +1,5 @@
+# Ignoring mock folder and README.md/docker-compose.yml files to avoid their copying inside the integration test's Docker image
+mock
+README.md
+docker-compose.yml
+
