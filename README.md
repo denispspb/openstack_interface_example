@@ -14,7 +14,7 @@ First of all, change directory to mock and run OpenStack mocked REST API using t
 ```
 $ python3 run_openstack_rest.py
 ```
-:speech_balloon: *This command will run the Flask server in foreground. Please run the integration tests file in the separate window or use any terminal multiplexer for convenience (screen, tmux, etc.)*
+:speech_balloon: *This command will run the Flask server in the foreground. Please run the integration tests file in the separate window or use any terminal multiplexer for convenience (screen, tmux, etc.)*
 
 Now the mocked OpenStack REST API is up and running, and you can run the integration tests against it. Change directory to the code's root and start integration test with the next command:
 ```
